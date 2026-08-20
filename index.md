@@ -1,16 +1,22 @@
 ---
 layout: home
-title: 'USFans Spreadsheet 2026 | USFans Finds and Category Guides'
-description: 'Explore USFans Spreadsheet 2026 through organized USFans finds, category overviews, focused guides and direct access to the full fashion spreadsheet.'
-category: USFans Spreadsheet
+title: 'USFans Spreadsheet 2026 | Taobao, 1688 & Weidian Product Links'
+description: 'Browse USFans Spreadsheet product links from Taobao, 1688 and Weidian, with QC photo references, category guides and practical research context for global shoppers.'
+category: USFans Product Directory
 keywords:
 - USFans Spreadsheet 2026
-- USFans Spreadsheet
-- USFans finds
+- USFans product links
+- USFans Taobao links
+- USFans 1688 links
+- USFans Weidian links
+- USFans QC photos
+- USFans global shipping guide
 tags:
 - USFans Spreadsheet 2026
-- USFans Finds
-- Fashion Discovery
+- Taobao, 1688 and Weidian links
+- QC photo references
+- Product research guides
+- Global buyer resources
 - Category Guides
 updated: '2026-08-14T00:00:00Z'
 ---

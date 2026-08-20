@@ -2,33 +2,33 @@
   <main class="modern-home">
     <section class="hero-section">
       <div class="page-container hero-content">
-        <p class="eyebrow">Curated fashion discovery · Updated regularly</p>
-        <h1>USFans Spreadsheet <span>2026</span></h1>
+        <p class="eyebrow">Taobao, 1688 & Weidian links · QC references · Global shoppers</p>
+        <h1>Shop Taobao, 1688 & Weidian with <span>UsFans.</span></h1>
         <p class="hero-copy">
-          Discover organized USFans finds across clothing, shoes, pants, hats, accessories and electronics,
-          with category overviews, focused guides and direct access to the full spreadsheet.
+          Explore product links from Chinese marketplaces with QC photo references, category guides and practical research
+          context before you decide how to purchase, compare or shortlist an item.
         </p>
         <div class="hero-actions">
-          <a :href="links.spreadsheet" target="_blank" rel="nofollow" class="button button-primary cta-spreadsheet">
+          <a :href="links.spreadsheet" target="_blank" rel="nofollow noopener noreferrer" class="button button-primary cta-spreadsheet">
             Explore the spreadsheet
             <span aria-hidden="true">↗</span>
           </a>
-          <a :href="shoppingUrl" target="_blank" rel="nofollow" class="button button-secondary cta-shopping">
+          <a :href="shoppingUrl" target="_blank" rel="nofollow sponsored noopener noreferrer" class="button button-secondary cta-shopping">
             Start shopping
           </a>
         </div>
         <dl class="hero-stats" aria-label="Catalog highlights">
           <div>
-            <dt>Curated</dt>
-            <dd>fashion discovery</dd>
+            <dt>Links</dt>
+            <dd>Taobao, 1688 & Weidian</dd>
           </div>
           <div>
-            <dt>Guided</dt>
-            <dd>category paths</dd>
+            <dt>QC</dt>
+            <dd>photo references</dd>
           </div>
           <div>
-            <dt>Direct</dt>
-            <dd>catalog access</dd>
+            <dt>Global</dt>
+            <dd>buyer research</dd>
           </div>
         </dl>
       </div>
@@ -37,11 +37,11 @@
     <section class="intro-section">
       <div class="page-container intro-grid">
         <div class="intro-content">
-          <p class="section-kicker">A better way to browse</p>
-          <h2>Everything you need to explore, organized in one place.</h2>
+          <p class="section-kicker">A better way to research</p>
+          <h2>Find useful product links without losing the context.</h2>
           <p>
-            Instead of working through unstructured listings, use clear category pages and focused guides to
-            compare styles, review details and find the next item for your wardrobe.
+            The spreadsheet organizes marketplace links into accessible categories, while focused guides help you
+            compare visible details, sizing notes, pricing references and questions to check before you proceed.
           </p>
         </div>
       </div>
@@ -50,9 +50,9 @@
     <section id="categories" class="section section-light">
       <div class="page-container">
         <div class="section-heading">
-          <p class="section-kicker">Browse by type</p>
-          <h2>Explore every clothing type in one place.</h2>
-          <p>These 15 unique types are drawn from the existing article library. Each card links to one representative guide.</p>
+          <p class="section-kicker">Browse by category</p>
+          <h2>Explore links across the products people search for.</h2>
+          <p>Use the category guides to move from a broad product type to more focused brand, sizing, QC and research pages.</p>
         </div>
         <div class="category-grid">
           <a v-for="cat in categoryCards" :key="cat.id" :href="cat.link" class="category-card">
@@ -68,8 +68,8 @@
     <section class="section section-muted">
       <div class="page-container">
         <div class="section-heading">
-          <p class="section-kicker">Simple by design</p>
-          <h2>From discovery to decision in four steps.</h2>
+          <p class="section-kicker">A practical research path</p>
+          <h2>From a product link to a clearer shortlist.</h2>
         </div>
         <ol class="steps-grid">
           <li v-for="(step, index) in steps" :key="step.title" class="step-card">
@@ -84,13 +84,13 @@
     <section id="features" class="section section-light">
       <div class="page-container feature-layout">
         <div class="feature-intro">
-          <p class="section-kicker">Built for useful discovery</p>
-          <h2>Less browsing. Better context.</h2>
+          <p class="section-kicker">Built for informed browsing</p>
+          <h2>More than a list of links.</h2>
           <p>
-            The site is designed around practical navigation, clear detail pages and a catalog that is easy to
-            return to whenever you need it.
+            UsFans combines organized product paths with practical notes about visible details, sizing, category context
+            and the limits of QC references, so global shoppers can research before using an external purchasing route.
           </p>
-          <a :href="links.spreadsheet" target="_blank" rel="nofollow" class="text-link cta-spreadsheet">
+          <a :href="links.spreadsheet" target="_blank" rel="nofollow noopener noreferrer" class="text-link cta-spreadsheet">
             Open the full catalog <span aria-hidden="true">→</span>
           </a>
         </div>
@@ -108,10 +108,10 @@
       <div class="page-container final-cta">
         <div>
           <p class="section-kicker">Ready when you are</p>
-          <h2>Explore the full fashion catalog.</h2>
-          <p>Access the spreadsheet directly, then come back to the guides whenever you need more context.</p>
+          <h2>Open the spreadsheet and build your shortlist.</h2>
+          <p>Start with product links and category guides, then verify live price, availability, seller details and destination terms before you act.</p>
         </div>
-        <a :href="links.spreadsheet" target="_blank" rel="nofollow" class="button button-light cta-spreadsheet">
+        <a :href="links.spreadsheet" target="_blank" rel="nofollow noopener noreferrer" class="button button-light cta-spreadsheet">
           Access spreadsheet <span aria-hidden="true">↗</span>
         </a>
       </div>
@@ -205,31 +205,35 @@ const guideCards = [
 ]
 
 const steps = [
-  { title: 'Choose a category', description: 'Start with the product type or style you want to explore.' },
-  { title: 'Review the guides', description: 'Use structured pages to understand details, sizing and context.' },
-  { title: 'Open the catalog', description: 'Browse the spreadsheet for a broader selection of fashion finds.' },
-  { title: 'Make your shortlist', description: 'Compare options and return to the resources whenever you need them.' }
+  { title: 'Find a product link', description: 'Start with a category, brand or marketplace path from Taobao, 1688, Weidian or another source.' },
+  { title: 'Review the listing', description: 'Compare visible details, pricing references, sizing notes and the information available for the item.' },
+  { title: 'Check QC references', description: 'Use available photos and guide notes to identify details that deserve closer attention.' },
+  { title: 'Confirm the next step', description: 'Verify the live destination, seller, stock, payment, shipping and customs terms before proceeding.' }
 ]
 
 const features = [
-  { mark: '01', title: 'Clear structure', description: 'Focused categories make it faster to reach the content that matters.' },
-  { mark: '02', title: 'Useful context', description: 'Guides provide practical background before you move to the catalog.' },
-  { mark: '03', title: 'Easy access', description: 'Open the full spreadsheet from any key point on the homepage.' },
-  { mark: '04', title: 'Always current', description: 'A simple system for returning to collections and new discovery paths.' }
+  { mark: '01', title: 'Organized links', description: 'Focused categories make it easier to move from a broad search to a relevant product path.' },
+  { mark: '02', title: 'QC references', description: 'Available photos and notes help you review visible details without overpromising authenticity.' },
+  { mark: '03', title: 'Sizing context', description: 'Guides highlight measurements, materials and fit questions worth checking before a decision.' },
+  { mark: '04', title: 'Global research', description: 'Use the resource from anywhere, then confirm current marketplace and destination terms yourself.' }
 ]
 
 const faqs = [
   {
-    question: 'What is the fashion spreadsheet?',
-    answer: 'It is a curated directory for browsing fashion items through organized categories and direct product resources.'
+    question: 'What is the USFans Spreadsheet?',
+    answer: 'It is a curated product directory that organizes links and product information from external marketplace resources into categories, guides and research paths.'
   },
   {
-    question: 'How should I start exploring?',
-    answer: 'Choose a category on this page, read the related guide, then use the spreadsheet to browse a wider selection.'
+    question: 'Can I find Taobao, 1688 and Weidian links?',
+    answer: 'The spreadsheet and related guides are organized around product links from Chinese marketplace sources such as Taobao, 1688 and Weidian. Always confirm the live destination, seller, price, stock and terms before proceeding.'
   },
   {
-    question: 'Can I access the catalog on mobile?',
-    answer: 'Yes. The site and its external catalog links are designed to work across desktop and mobile browsers.'
+    question: 'What do QC photos mean?',
+    answer: 'QC photos are visual references that can help users review visible details such as shape, stitching, materials and color. They are not a guarantee of authenticity, condition, availability or future quality.'
+  },
+  {
+    question: 'Does UsFans process payments or shipping?',
+    answer: 'This resource organizes product information and external links; it does not itself process payments, manage orders or operate a warehouse. Confirm purchasing, shipping, customs and support terms on the live destination before taking action.'
   }
 ]
 </script>
