@@ -11,7 +11,7 @@
         <div class="hero-actions">
           <div class="cta-preview-wrap cta-preview-spreadsheet">
             <div class="cta-preview-card" aria-hidden="true">
-              <img src="/images/usfans-spreadsheet-preview.png" alt="UsFans Spreadsheet preview showing curated product categories and shopping links" title="UsFans Spreadsheet preview" />
+              <img src="/images/usfans-spreadsheet-preview-clean-v2.png" alt="UsFans Spreadsheet preview showing curated product categories and shopping links" title="UsFans Spreadsheet preview" />
               <span class="cta-preview-caption">Spreadsheet preview</span>
             </div>
             <a :href="links.spreadsheet" target="_blank" rel="nofollow noopener noreferrer" class="button button-primary cta-spreadsheet">
