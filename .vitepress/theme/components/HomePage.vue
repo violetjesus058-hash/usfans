@@ -9,13 +9,25 @@
           context before you decide how to purchase, compare or shortlist an item.
         </p>
         <div class="hero-actions">
-          <a :href="links.spreadsheet" target="_blank" rel="nofollow noopener noreferrer" class="button button-primary cta-spreadsheet">
-            Explore the spreadsheet
-            <span aria-hidden="true">↗</span>
-          </a>
-          <a :href="shoppingUrl" target="_blank" rel="nofollow sponsored noopener noreferrer" class="button button-secondary cta-shopping">
-            Start shopping
-          </a>
+          <div class="cta-preview-wrap cta-preview-spreadsheet">
+            <div class="cta-preview-card" aria-hidden="true">
+              <img src="/images/usfans-spreadsheet-preview.png" alt="UsFans Spreadsheet preview showing curated product categories and shopping links" title="UsFans Spreadsheet preview" />
+              <span class="cta-preview-caption">Spreadsheet preview</span>
+            </div>
+            <a :href="links.spreadsheet" target="_blank" rel="nofollow noopener noreferrer" class="button button-primary cta-spreadsheet">
+              Explore the spreadsheet
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+          <div class="cta-preview-wrap cta-preview-shopping">
+            <div class="cta-preview-card" aria-hidden="true">
+              <img src="/images/usfans-shopping-preview.png" alt="UsFans shopping preview showing product categories and item options" title="UsFans shopping preview" />
+              <span class="cta-preview-caption">Shopping preview</span>
+            </div>
+            <a :href="shoppingUrl" target="_blank" rel="nofollow sponsored noopener noreferrer" class="button button-secondary cta-shopping">
+              Start shopping
+            </a>
+          </div>
         </div>
         <dl class="hero-stats" aria-label="Catalog highlights">
           <div>
@@ -257,6 +269,12 @@ const faqs = [
 .hero-content h1 span { color: var(--accent); }
 .hero-copy { max-width: 680px; margin: 28px auto 34px; color: var(--muted-ink); font-size: 19px; line-height: 1.7; text-align: center; }
 .hero-actions { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.cta-preview-wrap { position: relative; display: inline-flex; }
+.cta-preview-card { position: absolute; z-index: 4; bottom: calc(100% + 14px); left: 50%; width: 180px; height: 220px; padding: 7px; border: 1px solid rgba(17, 17, 17, .08); border-radius: 16px; background: rgba(255, 255, 255, .96); box-shadow: 0 18px 42px rgba(17, 17, 17, .18); opacity: 0; pointer-events: none; transform: translate(-50%, 8px) scale(.95); transform-origin: bottom center; transition: opacity .22s ease, transform .22s ease; }
+.cta-preview-card::after { content: ''; position: absolute; left: 50%; bottom: -7px; width: 13px; height: 13px; border-right: 1px solid rgba(17, 17, 17, .08); border-bottom: 1px solid rgba(17, 17, 17, .08); background: rgba(255, 255, 255, .96); transform: translateX(-50%) rotate(45deg); }
+.cta-preview-card img { display: block; width: 100%; height: 184px; border-radius: 11px; object-fit: cover; }
+.cta-preview-caption { display: block; padding: 8px 4px 2px; color: var(--ink); font-size: 11px; font-weight: 750; letter-spacing: .02em; line-height: 1.15; text-align: center; }
+.cta-preview-wrap:hover .cta-preview-card, .cta-preview-wrap:focus-within .cta-preview-card { opacity: 1; transform: translate(-50%, 0) scale(1); }
 .button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 23px; border: 1px solid transparent; border-radius: 8px; font-size: 15px; font-weight: 700; text-decoration: none; transition: transform .2s ease, box-shadow .2s ease, background .2s ease; }
 .button:hover { transform: translateY(-2px); }
 .button-primary { background: var(--ink); color: #fff; box-shadow: 0 10px 22px rgba(0,0,0,.12); }
@@ -325,5 +343,5 @@ const faqs = [
 .guide-card-link { margin-top: auto; color: var(--ink); font-size: 13px; font-weight: 800; }
 .guide-card-link span { margin-left: 4px; color: var(--accent); }
 @media (max-width: 900px) { .intro-grid, .feature-layout, .faq-wrap { grid-template-columns: 1fr; gap: 42px; } .intro-content { grid-column: auto; } .feature-intro { position: static; } .steps-grid { grid-template-columns: repeat(2, 1fr); } .category-grid { grid-template-columns: repeat(2, 1fr); } .final-cta { align-items: flex-start; flex-direction: column; } .hero-content h1 { max-width: 760px; font-size: clamp(40px, 7vw, 62px); } }
-@media (max-width: 700px) { .page-container { width: min(100% - 32px, 1180px); } .hero-content h1 { max-width: 100%; padding: 0 4px; font-size: clamp(38px, 11.5vw, 56px); line-height: 1.04; letter-spacing: -.055em; } .hero-section { padding: 76px 0 58px; } .hero-copy { max-width: 560px; font-size: 17px; line-height: 1.65; } .hero-stats { margin-top: 54px; gap: 8px; } .hero-stats dt { font-size: 19px; } .hero-stats dd { line-height: 1.35; } .intro-section, .section { padding: 72px 0; } .category-grid, .feature-grid, .guide-grid { grid-template-columns: 1fr; } .category-card { min-height: auto; } .category-icon { margin-bottom: 38px; } .category-card p { min-height: auto; } .steps-grid { grid-template-columns: 1fr; gap: 4px; } .step-index { margin-bottom: 28px; } .section-heading { margin-bottom: 36px; } .guide-card { min-height: 0; padding: 24px; } .guide-label { margin-bottom: 28px; } }
+@media (max-width: 700px) { .cta-preview-wrap { display: contents; } .cta-preview-card { display: none; } .page-container { width: min(100% - 32px, 1180px); } .hero-content h1 { max-width: 100%; padding: 0 4px; font-size: clamp(38px, 11.5vw, 56px); line-height: 1.04; letter-spacing: -.055em; } .hero-section { padding: 76px 0 58px; } .hero-copy { max-width: 560px; font-size: 17px; line-height: 1.65; } .hero-stats { margin-top: 54px; gap: 8px; } .hero-stats dt { font-size: 19px; } .hero-stats dd { line-height: 1.35; } .intro-section, .section { padding: 72px 0; } .category-grid, .feature-grid, .guide-grid { grid-template-columns: 1fr; } .category-card { min-height: auto; } .category-icon { margin-bottom: 38px; } .category-card p { min-height: auto; } .steps-grid { grid-template-columns: 1fr; gap: 4px; } .step-index { margin-bottom: 28px; } .section-heading { margin-bottom: 36px; } .guide-card { min-height: 0; padding: 24px; } .guide-label { margin-bottom: 28px; } }
 </style>
