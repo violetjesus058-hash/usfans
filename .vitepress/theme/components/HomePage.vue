@@ -253,9 +253,9 @@ const faqs = [
 .hero-section { padding: 88px 0 72px; border-bottom: 1px solid var(--line); }
 .hero-content { text-align: center; max-width: 900px; }
 .eyebrow, .section-kicker { margin: 0 0 18px; color: var(--accent); font-size: 12px; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
-.hero-content h1 { max-width: none; margin: 0 auto; color: var(--ink); font-size: clamp(44px, 5.4vw, 76px); font-weight: 800; letter-spacing: -.067em; line-height: .98; white-space: nowrap; }
+.hero-content h1 { width: 100%; max-width: 1040px; margin: 0 auto; padding: 0 16px; color: var(--ink); font-size: clamp(42px, 5.15vw, 72px); font-weight: 800; letter-spacing: -.062em; line-height: 1.02; text-align: center; text-wrap: balance; white-space: normal; overflow-wrap: anywhere; }
 .hero-content h1 span { color: var(--accent); }
-.hero-copy { max-width: 630px; margin: 28px auto 34px; color: var(--muted-ink); font-size: 19px; line-height: 1.7; }
+.hero-copy { max-width: 680px; margin: 28px auto 34px; color: var(--muted-ink); font-size: 19px; line-height: 1.7; text-align: center; }
 .hero-actions { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
 .button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 23px; border: 1px solid transparent; border-radius: 8px; font-size: 15px; font-weight: 700; text-decoration: none; transition: transform .2s ease, box-shadow .2s ease, background .2s ease; }
 .button:hover { transform: translateY(-2px); }
@@ -263,7 +263,7 @@ const faqs = [
 .button-primary:hover { background: var(--accent); box-shadow: 0 12px 26px rgba(91,92,226,.22); }
 .button-secondary { border-color: var(--line); background: #fff; color: var(--ink); }
 .button-secondary:hover { border-color: #c8c8c8; background: var(--surface); }
-.hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; max-width: 680px; margin: 56px auto 0; padding-top: 25px; border-top: 1px solid var(--line); }
+.hero-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; width: min(680px, 100%); margin: 56px auto 0; padding-top: 25px; border-top: 1px solid var(--line); }
 .hero-stats div { text-align: center; }
 .hero-stats dt { margin-bottom: 4px; color: var(--ink); font-size: 23px; font-weight: 800; letter-spacing: -.04em; }
 .hero-stats dd { margin: 0; color: var(--muted-ink); font-size: 13px; }
@@ -324,6 +324,6 @@ const faqs = [
 .guide-card p { max-width: 460px; margin: 14px 0 23px; color: var(--muted-ink); font-size: 15px; line-height: 1.65; }
 .guide-card-link { margin-top: auto; color: var(--ink); font-size: 13px; font-weight: 800; }
 .guide-card-link span { margin-left: 4px; color: var(--accent); }
-@media (max-width: 900px) { .intro-grid, .feature-layout, .faq-wrap { grid-template-columns: 1fr; gap: 42px; } .intro-content { grid-column: auto; } .feature-intro { position: static; } .steps-grid { grid-template-columns: repeat(2, 1fr); } .category-grid { grid-template-columns: repeat(2, 1fr); } .final-cta { align-items: flex-start; flex-direction: column; } }
-@media (max-width: 700px) { .page-container { width: min(100% - 32px, 1180px); } .hero-content h1 { white-space: normal; } .hero-section { padding: 76px 0 58px; } .hero-copy { font-size: 17px; } .hero-stats { margin-top: 54px; gap: 8px; } .hero-stats dt { font-size: 19px; } .intro-section, .section { padding: 72px 0; } .category-grid, .feature-grid, .guide-grid { grid-template-columns: 1fr; } .category-card { min-height: auto; } .category-icon { margin-bottom: 38px; } .category-card p { min-height: auto; } .steps-grid { grid-template-columns: 1fr; gap: 4px; } .step-index { margin-bottom: 28px; } .section-heading { margin-bottom: 36px; } .guide-card { min-height: 0; padding: 24px; } .guide-label { margin-bottom: 28px; } }
+@media (max-width: 900px) { .intro-grid, .feature-layout, .faq-wrap { grid-template-columns: 1fr; gap: 42px; } .intro-content { grid-column: auto; } .feature-intro { position: static; } .steps-grid { grid-template-columns: repeat(2, 1fr); } .category-grid { grid-template-columns: repeat(2, 1fr); } .final-cta { align-items: flex-start; flex-direction: column; } .hero-content h1 { max-width: 760px; font-size: clamp(40px, 7vw, 62px); } }
+@media (max-width: 700px) { .page-container { width: min(100% - 32px, 1180px); } .hero-content h1 { max-width: 100%; padding: 0 4px; font-size: clamp(38px, 11.5vw, 56px); line-height: 1.04; letter-spacing: -.055em; } .hero-section { padding: 76px 0 58px; } .hero-copy { max-width: 560px; font-size: 17px; line-height: 1.65; } .hero-stats { margin-top: 54px; gap: 8px; } .hero-stats dt { font-size: 19px; } .hero-stats dd { line-height: 1.35; } .intro-section, .section { padding: 72px 0; } .category-grid, .feature-grid, .guide-grid { grid-template-columns: 1fr; } .category-card { min-height: auto; } .category-icon { margin-bottom: 38px; } .category-card p { min-height: auto; } .steps-grid { grid-template-columns: 1fr; gap: 4px; } .step-index { margin-bottom: 28px; } .section-heading { margin-bottom: 36px; } .guide-card { min-height: 0; padding: 24px; } .guide-label { margin-bottom: 28px; } }
 </style>
