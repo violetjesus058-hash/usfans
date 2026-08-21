@@ -21,6 +21,14 @@
               :href="article.link"
               class="article-card"
             >
+              <span class="article-preview-card" aria-hidden="true">
+                <img
+                  :src="article.preview || defaultArticlePreview"
+                  :alt="`${article.title} preview`"
+                  :title="`${article.title} preview`"
+                />
+                <span class="article-preview-caption">Article preview</span>
+              </span>
               <h3 class="article-title">{{ article.title }}</h3>
               <p class="article-excerpt">{{ article.excerpt }}</p>
               <span class="article-read-more">Read more &rarr;</span>
@@ -84,6 +92,8 @@
 </template>
 
 <script setup>
+const defaultArticlePreview = '/images/usfans-spreadsheet-preview-clean-v2.png'
+
 const articleSeries = [
   {
     "name": "Getting Started",
@@ -3242,6 +3252,7 @@ const recommendedSeries = [
 
 /* ---- Article Card ---- */
 .article-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   background: #fff;
@@ -3251,12 +3262,82 @@ const recommendedSeries = [
   text-decoration: none;
   transition: all 0.25s ease;
   cursor: pointer;
+  overflow: visible;
+  z-index: 0;
 }
 
 .article-card:hover {
+  z-index: 5;
   border-color: #d4af37;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   transform: translateY(-2px);
+}
+
+.article-preview-card {
+  position: absolute;
+  right: 18px;
+  bottom: calc(100% + 14px);
+  z-index: 10;
+  display: flex;
+  width: 216px;
+  min-height: 264px;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 8px;
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 18px 44px rgba(25, 25, 25, 0.18);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px) scale(0.95);
+  transform-origin: bottom right;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.article-preview-card::after {
+  content: '';
+  position: absolute;
+  right: 28px;
+  bottom: -8px;
+  width: 16px;
+  height: 16px;
+  border-right: 1px solid rgba(212, 175, 55, 0.22);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.22);
+  background: #fff;
+  transform: rotate(45deg);
+}
+
+.article-preview-card img {
+  display: block;
+  width: 200px;
+  height: 232px;
+  margin: 0 auto;
+  border-radius: 10px;
+  background: #f7f7f7;
+  object-fit: contain;
+}
+
+.article-preview-caption {
+  position: relative;
+  z-index: 1;
+  display: block;
+  padding: 8px 4px 2px;
+  color: #333;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.article-card:hover .article-preview-card,
+.article-card:focus-visible .article-preview-card {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.article-card:focus-visible {
+  outline: 3px solid rgba(212, 175, 55, 0.38);
+  outline-offset: 3px;
 }
 
 .article-title {
@@ -3373,8 +3454,19 @@ const recommendedSeries = [
     padding: 16px;
   }
 
+  .article-preview-card {
+    display: none;
+  }
+
   .explore-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .article-preview-card,
+  .article-card {
+    transition: none;
   }
 }
 
