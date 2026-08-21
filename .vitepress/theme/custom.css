@@ -238,3 +238,81 @@ body { color: #111; background: #fff; }
   .article-actions { display: grid; grid-template-columns: 1fr; }
   .article-action { width: 100%; }
 }
+
+/* Article-header CTA preview cards: mirrors the homepage interaction. */
+.article-action-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  z-index: 0;
+}
+.article-action-wrap:hover,
+.article-action-wrap:focus-within {
+  z-index: 10;
+}
+.article-preview-card {
+  position: absolute;
+  right: 50%;
+  bottom: calc(100% + 14px);
+  z-index: 20;
+  display: flex;
+  width: 216px;
+  min-height: 264px;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 8px;
+  border: 1px solid rgba(91, 92, 226, .18);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, .98);
+  box-shadow: 0 18px 44px rgba(25, 25, 25, .18);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(50%, 8px) scale(.95);
+  transform-origin: bottom center;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+.article-preview-card::after {
+  content: '';
+  position: absolute;
+  right: calc(50% - 8px);
+  bottom: -8px;
+  width: 16px;
+  height: 16px;
+  border-right: 1px solid rgba(91, 92, 226, .18);
+  border-bottom: 1px solid rgba(91, 92, 226, .18);
+  background: #fff;
+  transform: rotate(45deg);
+}
+.article-preview-card img {
+  display: block;
+  width: 200px;
+  height: 232px;
+  margin: 0 auto;
+  border-radius: 10px;
+  background: #f7f7f7;
+  object-fit: contain;
+}
+.article-preview-caption {
+  position: relative;
+  z-index: 1;
+  display: block;
+  padding: 8px 4px 2px;
+  color: #333;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+}
+.article-action-wrap:hover .article-preview-card,
+.article-action-wrap:focus-within .article-preview-card {
+  opacity: 1;
+  transform: translate(50%, 0) scale(1);
+}
+@media (max-width: 560px) {
+  .article-preview-card { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .article-preview-card,
+  .article-action { transition: none; }
+}

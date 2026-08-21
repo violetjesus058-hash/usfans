@@ -2,28 +2,48 @@
   <header v-if="isArticle" class="article-page-header">
     <h1>{{ articleTitle }}</h1>
     <div class="article-actions" role="group" aria-label="Article actions">
-      <component
-        :is="spreadsheetLinked ? 'a' : 'span'"
-        :href="spreadsheetLinked ? spreadsheetUrl : undefined"
-        :target="spreadsheetLinked ? '_blank' : undefined"
-        :rel="spreadsheetLinked ? 'nofollow noopener noreferrer' : undefined"
-        :aria-disabled="spreadsheetLinked ? undefined : 'true'"
-        class="article-action article-action-primary"
-        :class="{ 'is-unlinked': !spreadsheetLinked }"
-      >
-        Access UsFans spreadsheet
-      </component>
-      <component
-        :is="shoppingLinked ? 'a' : 'span'"
-        :href="shoppingLinked ? shoppingUrl : undefined"
-        :target="shoppingLinked ? '_blank' : undefined"
-        :rel="shoppingLinked ? 'nofollow noopener noreferrer' : undefined"
-        :aria-disabled="shoppingLinked ? undefined : 'true'"
-        class="article-action article-action-secondary"
-        :class="{ 'is-unlinked': !shoppingLinked }"
-      >
-        Start shopping
-      </component>
+      <div class="article-action-wrap article-action-wrap-spreadsheet">
+        <div class="article-preview-card" aria-hidden="true">
+          <img
+            src="/images/usfans-spreadsheet-preview-clean-v2.png"
+            alt="UsFans Spreadsheet preview showing curated product categories and shopping links"
+            title="UsFans Spreadsheet preview"
+          />
+          <span class="article-preview-caption">Spreadsheet preview</span>
+        </div>
+        <component
+          :is="spreadsheetLinked ? 'a' : 'span'"
+          :href="spreadsheetLinked ? spreadsheetUrl : undefined"
+          :target="spreadsheetLinked ? '_blank' : undefined"
+          :rel="spreadsheetLinked ? 'nofollow noopener noreferrer' : undefined"
+          :aria-disabled="spreadsheetLinked ? undefined : 'true'"
+          class="article-action article-action-primary"
+          :class="{ 'is-unlinked': !spreadsheetLinked }"
+        >
+          Access UsFans spreadsheet
+        </component>
+      </div>
+      <div class="article-action-wrap article-action-wrap-shopping">
+        <div class="article-preview-card" aria-hidden="true">
+          <img
+            src="/images/usfans-shopping-preview.png"
+            alt="UsFans shopping preview showing product categories and item options"
+            title="UsFans shopping preview"
+          />
+          <span class="article-preview-caption">Shopping preview</span>
+        </div>
+        <component
+          :is="shoppingLinked ? 'a' : 'span'"
+          :href="shoppingLinked ? shoppingUrl : undefined"
+          :target="shoppingLinked ? '_blank' : undefined"
+          :rel="shoppingLinked ? 'nofollow noopener noreferrer' : undefined"
+          :aria-disabled="shoppingLinked ? undefined : 'true'"
+          class="article-action article-action-secondary"
+          :class="{ 'is-unlinked': !shoppingLinked }"
+        >
+          Start shopping
+        </component>
+      </div>
     </div>
   </header>
 </template>
