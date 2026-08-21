@@ -161,6 +161,20 @@
         </div>
       </div>
     </section>
+    <section id="community-research" class="section section-research">
+      <div class="page-container research-card">
+        <div>
+          <p class="section-kicker">Parcel planning</p>
+          <h2>Check parcel limits, shoe-pair rules and carrier policies.</h2>
+          <p class="research-card-copy">Plan footwear and larger parcels by checking current storage, QC-photo, packaging, carrier and destination rules rather than relying on a universal item count.</p>
+          <a href="/blog/usfans-community-buying-guide/" class="research-card-link">Read the UsFans research guide <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="research-card-note">
+          <strong>UsFans community research</strong>
+          <span>Community discussions are treated as signals for what to verify. The guide separates reported experiences from current platform policies, live quotes and transaction terms.</span>
+        </div>
+      </div>
+    </section>
   </main>
 </template>
 
@@ -344,4 +358,13 @@ const faqs = [
 .guide-card-link span { margin-left: 4px; color: var(--accent); }
 @media (max-width: 900px) { .intro-grid, .feature-layout, .faq-wrap { grid-template-columns: 1fr; gap: 42px; } .intro-content { grid-column: auto; } .feature-intro { position: static; } .steps-grid { grid-template-columns: repeat(2, 1fr); } .category-grid { grid-template-columns: repeat(2, 1fr); } .final-cta { align-items: flex-start; flex-direction: column; } .hero-content h1 { max-width: 760px; font-size: clamp(40px, 7vw, 62px); } }
 @media (max-width: 700px) { .cta-preview-wrap { display: contents; } .cta-preview-card { display: none; } .page-container { width: min(100% - 32px, 1180px); } .hero-content h1 { max-width: 100%; padding: 0 4px; font-size: clamp(38px, 11.5vw, 56px); line-height: 1.04; letter-spacing: -.055em; } .hero-section { padding: 76px 0 58px; } .hero-copy { max-width: 560px; font-size: 17px; line-height: 1.65; } .hero-stats { margin-top: 54px; gap: 8px; } .hero-stats dt { font-size: 19px; } .hero-stats dd { line-height: 1.35; } .intro-section, .section { padding: 72px 0; } .category-grid, .feature-grid, .guide-grid { grid-template-columns: 1fr; } .category-card { min-height: auto; } .category-icon { margin-bottom: 38px; } .category-card p { min-height: auto; } .steps-grid { grid-template-columns: 1fr; gap: 4px; } .step-index { margin-bottom: 28px; } .section-heading { margin-bottom: 36px; } .guide-card { min-height: 0; padding: 24px; } .guide-label { margin-bottom: 28px; } }
+    .section-research { background: #f0f0fb; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .research-card { display: grid; grid-template-columns: minmax(0, .9fr) minmax(280px, 1.1fr); gap: 48px; align-items: center; }
+    .research-card h2 { max-width: 620px; margin: 0; font-size: clamp(30px, 4vw, 50px); font-weight: 780; letter-spacing: -.055em; line-height: 1.08; }
+    .research-card-copy { max-width: 620px; margin: 20px 0 0; color: var(--muted-ink); font-size: 17px; line-height: 1.75; }
+    .research-card-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 28px; color: var(--accent); font-size: 15px; font-weight: 800; text-decoration: none; }
+    .research-card-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+    .research-card-note { padding: 28px; border: 1px solid rgba(91,92,226,.22); border-radius: 16px; background: rgba(255,255,255,.72); color: var(--muted-ink); font-size: 15px; line-height: 1.7; }
+    .research-card-note strong { display: block; margin-bottom: 8px; color: var(--ink); font-size: 17px; }
+    @media (max-width: 760px) { .research-card { grid-template-columns: 1fr; gap: 26px; } .research-card-note { padding: 22px; } }
 </style>
